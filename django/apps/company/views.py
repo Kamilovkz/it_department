@@ -1,12 +1,12 @@
-from rest_framework import generics, status
+from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Department, Employee
 from .serializers import DepartmentSerializer, EmployeeSerializer
-
-# Create your views here.
 
 
 class CustomEmployeePagination(PageNumberPagination):
@@ -16,6 +16,8 @@ class CustomEmployeePagination(PageNumberPagination):
 
 
 class EmployeeAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     pagination_class = CustomEmployeePagination
 
     def get(self, request, format=None):
@@ -102,4 +104,8 @@ class EmployeesByDepartmentAPIView(APIView):
 
 # class DepartmentCreateAPIView(generics.CreateAPIView):
 #     queryset = Department.objects.all()
+#     serializer_class = DepartmentSerializer
+#     serializer_class = DepartmentSerializer
+#     serializer_class = DepartmentSerializer
+#     serializer_class = DepartmentSerializer
 #     serializer_class = DepartmentSerializer
