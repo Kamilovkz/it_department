@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "it-department"
+version = "0.1.0"
+description = ""
+authors = ["Kamilovkz <001kamilov@gmail.com>"]
+readme = "README.md"
+packages = [{include = "it_department"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+djangorestframework = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
