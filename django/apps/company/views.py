@@ -105,7 +105,3 @@ class EmployeesByDepartmentAPIView(APIView):
 # class DepartmentCreateAPIView(generics.CreateAPIView):
 #     queryset = Department.objects.all()
 #     serializer_class = DepartmentSerializer
-#     serializer_class = DepartmentSerializer
-#     serializer_class = DepartmentSerializer
-#     serializer_class = DepartmentSerializer
-#     serializer_class = DepartmentSerializer
